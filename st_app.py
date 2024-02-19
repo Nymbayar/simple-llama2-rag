@@ -3,7 +3,7 @@ from torch import cuda, bfloat16
 import torch
 import transformers
 from transformers import AutoTokenizer
-from time import time
+import time
 import wikipedia
 import streamlit as st
 import chromadb
@@ -116,7 +116,7 @@ qa = RetrievalQA.from_chain_type(
 
 def test_rag(qa, query):
     result = qa.run(query)
-    print("\nResult: ", result)
+    return result
 
     ################################### Start Chat Session  ###################################
 def run_st_app():
